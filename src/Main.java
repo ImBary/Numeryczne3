@@ -5,10 +5,12 @@ public class Main {
         //MetodaProstokatow mp = new MetodaProstokatow();
         //mp.testPolaKola();
        
-        trapezTesty();
+        //trapezTesty();
 
-
-
+        DlugoscKrzywej dk = new DlugoscKrzywej(0, 1, 10000);
+        DoubleUnaryOperator circleFunction = x -> Math.sqrt(1 - x * x);
+        DoubleUnaryOperator derivativeCircleFunction = x -> -x/Math.sqrt(1 - x * x); // pochodna
+        System.out.println("oczekiwane "+ Math.PI/2 +", wynik: "+dk.calculateLen(circleFunction,derivativeCircleFunction));
     }
 
 
@@ -21,8 +23,6 @@ public class Main {
         MetodaTrapezow s2 = new MetodaTrapezow(0, 1, 10000);
         DoubleUnaryOperator UFunction = x -> x * x;
         System.out.println("oczekiwane 1/3 wynik: " + s2.oblicz(UFunction)); // 0.333
-
-
 
         double a = 2;
         double b = 1;
